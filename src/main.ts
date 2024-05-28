@@ -3,7 +3,7 @@ import 'zone.js';
 
 import { AppComponent } from './app/app.component';
 import { provideHttpClient } from '@angular/common/http';
-import { provideRouter } from '@angular/router';
+import { provideRouter, withComponentInputBinding } from '@angular/router';
 import { appRoutes } from './app.routes';
 
 
@@ -11,6 +11,7 @@ import { appRoutes } from './app.routes';
 bootstrapApplication(AppComponent, {
   providers:[
     provideHttpClient(),
-    provideRouter(appRoutes),
+    provideRouter(appRoutes,withComponentInputBinding())
   ]
+
 }).catch(err => console.error(err));
