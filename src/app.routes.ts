@@ -6,10 +6,10 @@ import { bootstrapApplication } from '@angular/platform-browser';
 
 export const appRoutes: Route[] = [
 //   {path: '',component:AppComponent},
-  {path: '',component: AppComponent, children: [
+  // {path: '',component: AppComponent, children: [
     {path: 'products', component: ProductComponent},
     {path: 'cart', component: CartComponent},
-  ]},
+  // ]},
 ];
 
 // bootstrapApplication(AppComponent, {
