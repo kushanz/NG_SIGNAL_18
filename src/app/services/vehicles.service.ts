@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Vehicle, VehicleResponse } from '../interfaces/vehicle.interface';
 import { map } from 'rxjs';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,7 @@ export class VehiclesService {
       map((data) =>  data.results.map((v) => ({...v,cost: isNaN(Number(v.cost_in_credits))
       ? String(Math.random()*100000) : v.cost_in_credits}) as Vehicle))
     )
+    getVehiclesSignal = toSignal(this.getvehicles$,{initialValue:[]})
   
   constructor() { }
 }

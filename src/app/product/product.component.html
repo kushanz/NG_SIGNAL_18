@@ -1,12 +1,9 @@
-<p>product works!</p>
-a = <input type="text" type="number" #inputval [value]="a()" (change)="onChange(inputval)">
-<h3>b = {{b()}}</h3>
-<h3>a+b = {{c()}}</h3>
 <div class="card">
     <div class="card-header">
         Vehicles List
+        <input type="text" [(ngModel)]="searchFilter">
     </div>
-    <div class="card-body" *ngIf="vehiclesList$ | async as vehiclesList">
+    <div class="card-body" *ngIf="filteredVehicleSignal() as vehiclesList">
         <div class="list-group">
             <button class="list-group-item" *ngFor="let v of vehiclesList">{{v.name}}</button>
         </div>
