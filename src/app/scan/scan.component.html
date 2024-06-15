@@ -1,0 +1,6 @@
+<!-- @for (click of clicks$ | async; track $index) {
+    <div [style.left.px]="click.clientX" [style.top.px]="click.clientY" class="click"></div>
+} -->
+<div *ngFor="let click of clicks$ | async" class="click" [style.left.px]="click.clientX" [style.top.px]="click.clientY">
+
+</div>
