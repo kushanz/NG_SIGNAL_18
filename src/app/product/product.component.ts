@@ -15,10 +15,10 @@ import { toSignal } from '@angular/core/rxjs-interop'
 export class ProductComponent {
   searchFilter = signal('')
   private vehicleSesvice = inject(VehiclesService)
-  vehiclesList$ = this.vehicleSesvice.getvehicles$.pipe(
-    catchError(err => {
-      return EMPTY
-    }))
+  // vehiclesList$ = this.vehicleSesvice.getvehicles$.pipe(
+  //   catchError(err => {
+  //     return EMPTY
+  //   }))
     vehicleListSignal = this.vehicleSesvice.getVehiclesSignal
     constructor() {
 
